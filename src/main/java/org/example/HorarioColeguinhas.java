@@ -6,8 +6,8 @@ import java.util.List;
 
 public class HorarioColeguinhas
 {
-    public static void main( String[] args )
-    {
+    public static void main(String[] args) {
+
         List<String> nicolauList = new ArrayList<>();
         List<String> cominoList = new ArrayList<>();
         List<String> matheusList = new ArrayList<>();
@@ -28,17 +28,18 @@ public class HorarioColeguinhas
         for (int i = 0; i < coleguinhas.size(); i++) {
             dayOfWeek++;
             if(dayOfWeek == 1 || dayOfWeek == 5){
-                System.out.printf("Dia da semana: " + dayOfWeek + " - O colega " + coleguinhas.get(i) + " faz o plantão e todos estão de home, ninguém se vê.\n");
+                System.out.printf("Dia da semana: " + dayOfWeek + "\n\tO colega " + coleguinhas.get(i) + " faz o plantão e todos estão de home, ninguém se vê.");
             }
             else{
-                System.out.println("\n" + coleguinhas.get(i) + " faz o plantão e todos os restantes foram para o escritório.");
+                System.out.println("\n\n" + "Dia da semana:" + dayOfWeek);
+                System.out.println(coleguinhas.get(i) + " faz o plantão e todos os restantes foram para o escritório.");
                 for (int j = 0; j < coleguinhasList.size(); j++) {
                     for (int k = 0; k < coleguinhas.size(); k++) {
                         if(!(coleguinhas.get(k).equals(coleguinhas.get(i))) && !(coleguinhasList.get(j).contains(coleguinhas.get(k))) && !(k == j) && !(i == j)){
                             coleguinhasList.get(j).add(coleguinhas.get(k));
                         }
                     }
-                    System.out.println("Dia da semana: " + dayOfWeek + " - O colega " + coleguinhas.get(j) + " já viu esses colegas" + coleguinhasList.get(j));
+                    System.out.printf("\tO colega " + coleguinhas.get(j) + " já viu esses colegas" + coleguinhasList.get(j) + "\n");
                 }
             }
             if (dayOfWeek == 5){
